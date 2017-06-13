@@ -5,6 +5,7 @@
   	    <router-link class="mui-icon iconfont icon-sousuo_sousuo mui-pull-right" to="/search"></router-link>
   	</header>
   </div>
+  
 </template>
 
 <script>
