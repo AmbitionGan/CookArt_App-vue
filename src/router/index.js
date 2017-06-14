@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import Search from '@/components/Search'
+import Search from '@/components/public/Search'
 import Choice from '@/components/choice/Choice'
 import Discovery from '@/components/discovery/Discovery'
+import Mine from '@/components/mine/Mine'
+import Workshow from '@/components/mine/workshow'
+import Collection from '@/components/mine/collection'
 
 Vue.use(Router)
 
@@ -29,5 +32,21 @@ export default new Router({
       name: 'Discovery',
       component: Discovery
     },
+    {
+      path: '/mine',
+      name: 'Mine',
+      component: Mine,
+      redirect: "/workshow",
+      children : [
+      	{
+      		path: '/workshow',
+      		component : Workshow
+      	},
+      	{
+      		path: '/collection',
+      		component : Collection
+      	}
+      ]
+    }
   ]
 })

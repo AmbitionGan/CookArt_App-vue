@@ -20,7 +20,7 @@
         </router-link>
     	</div>  
       <div class="mui-tab-item">
-    		<router-link to="/own">
+    		<router-link to="/mine">
             <span class="mui-icon iconfont icon-wode"></span>
             <span class="mui-tab-label">我的</span>
         </router-link>
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'app',
+  name: 'app'
 }
 mui('body').on('tap','a',function(){document.location.href=this.href;});
 </script>
@@ -61,7 +61,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: .96rem;
+	height: 50px;
 	width: 100%;
 	background: white;
 }

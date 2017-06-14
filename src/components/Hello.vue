@@ -39,7 +39,7 @@ export default {
 	font-size: 0.35rem;
 }
 .content{
-	height: calc(100vh - 1rem);
+	height: calc(100vh - 50px);
 	overflow: auto;
 }
 .mui-table-view:before{

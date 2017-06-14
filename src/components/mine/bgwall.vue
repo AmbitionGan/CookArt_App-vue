@@ -1,0 +1,85 @@
+<template>
+    <div class="mui-card">
+		<!--内容区-->
+		<div class="mui-card-content">
+			<p><img src="../../../static/images/mine/ben.png"/></p>
+			<img src="../../../static/images/choic_img/tianpin.jpg">
+		</div>
+		<h2 class="intro">简介：这个家伙很懒，什么都没有留下~</h2>
+		<router-link class="settings" to="/settings">
+			<i class="iconfont icon-shezhi"></i>
+		</router-link>
+	</div>
+</template>
+
+<script>
+export default {
+  name: 'bgwall'
+}
+</script>
+
+<style scoped>
+.mui-card[data-v-5747921f]{
+	margin-bottom: 0;
+}
+.mui-card{
+	margin: 0;
+	position: relative;
+}
+.mui-card-content img{
+	width: 100%;
+	height: 3.5rem;
+}
+.mui-card-content p img{
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-0.75rem,-0.75rem);
+}
+.intro{
+	position: absolute;
+	bottom: 8%;
+	left: 10%;
+	z-index: 3;
+	width: 80%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #fff;
+}
+.mui-card-content{
+	position: relative;
+	width: 100%;
+	height: 3.5rem;
+}
+.mui-card-content p{
+	font-size: .32rem;
+	color: rgba(256,256,256,.9);
+	z-index: 2;
+	position: absolute;
+	text-align: center;
+	line-height: 3.5rem;
+	width: 100%;
+	height: 3.5rem;
+	background: rgba(0,0,0,.4);
+	margin-bottom: 0;
+}
+.mui-card{
+	margin-bottom: .24rem;
+}
+.settings{
+	position: absolute;
+	z-index: 3;
+	top: 9%;
+	right: 7%;
+	color: #fff;
+}
+.settings i{
+	font-size: 0.45rem;
+}
+</style>
