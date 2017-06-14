@@ -48,7 +48,8 @@ export default new Router({
       		component : Collection
       	}
       ]
-    }
+    },
+    {
       path: '/details/:id/:imgUrl/:msg',
       name: 'Details',
       component: Details

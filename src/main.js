@@ -12,7 +12,6 @@ Vue.use(VueAxios,Axios)
 
 Vue.config.productionTip = false
 
-Vue.use(VueAxios, axios)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
