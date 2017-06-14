@@ -11,7 +11,6 @@ export default {
 
 <style scoped>
 	#Content{
-		height:calc(100vh - 0.96rem);
 		overflow: auto;
 		background: white;
 	}
