@@ -77,7 +77,7 @@ export default {
   	getData(){
   		var keyword = document.getElementsByClassName("searchVal")[0].value;
 		var url = "/cook/query.php?menu="+ keyword +"&key=d6973f3fa9fcdddc05886030da862f26";
-//		Vue.axios.get(url).then((res)=>{
+//		Vue.Axios.get(url).then((res)=>{
 //		   	this.searchlist = res.data.result.data;
 //	       	console.log(this.searchlist)
 //	        bus.$emit("searchres",this.searchlist)
@@ -90,7 +90,7 @@ export default {
 //          console.log(data)
 //        }
 //      })
-		Vue.axios.get("../../../static/hongshaorou.json").then((res)=> {
+		Vue.Axios.get("../../../static/hongshaorou.json").then((res)=> {
 	        this.searchlist = res.data.result.data;
 	        //console.log(this.searchlist)
 	        bus.$emit("searchres",this.searchlist)

@@ -7,6 +7,7 @@ import Discovery from '@/components/discovery/Discovery'
 import Mine from '@/components/mine/Mine'
 import Workshow from '@/components/mine/workshow'
 import Collection from '@/components/mine/collection'
+import Details from '@/components/details/Details'
 
 Vue.use(Router)
 
@@ -48,5 +49,9 @@ export default new Router({
       	}
       ]
     }
+      path: '/details/:id/:imgUrl/:msg',
+      name: 'Details',
+      component: Details
+    },
   ]
 })
