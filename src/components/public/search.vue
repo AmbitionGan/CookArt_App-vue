@@ -3,7 +3,7 @@
     <form class="search-form" action="/">
         <a class="mui-action-back mui-icon mui-icon-back"></a>
         <!--搜索栏文本-->
-        <div class="mui-input-row mui-icon mui-search">
+        <div class="mui-input-row mui-icon">
             <input type="search" class="mui-input-clear searchVal" placeholder="">
         </div>
         <input class="search-top-btn search" type="button" value="搜索" @click="getData">
@@ -67,7 +67,7 @@ export default {
   		searchlist : []
   	}
   },
-  created () {
+  beforeMount () {
   	document.getElementById("app").style.display = "none";
   },
   destroyed () {
@@ -75,9 +75,9 @@ export default {
   },
   methods : {
   	getData(){
-//		var keyword = document.getElementsByClassName("searchVal")[0].value;
-//		var url = "/cook/query.php?menu="+ keyword +"&key=d6973f3fa9fcdddc05886030da862f26";
-//		Vue.Axios.get(url).then((res)=>{
+		var keyword = document.getElementsByClassName("searchVal")[0].value;
+		var url = "/cook/query.php?menu="+ keyword +"&key=d6973f3fa9fcdddc05886030da862f26";
+//		Vue.axios.get(url).then((res)=>{
 //		   	this.searchlist = res.data.result.data;
 //	       	console.log(this.searchlist)
 //	        bus.$emit("searchres",this.searchlist)
@@ -106,6 +106,7 @@ export default {
 <style scoped>
 .mui-icon-back{
 	margin: 0 0.2rem 0 0.1rem;
+	color: #fff;
 }
 .search-form{
     display: flex;
@@ -116,16 +117,32 @@ export default {
     background-color: #ff9a6a;
     font-size: 0.28rem;
 }
+.mui-input-row{
+	width: 70%;
+}
+input[type=button]{
+	font-size: 0.28rem;
+	color: #fff;
+	margin-left: 0.2rem;
+}
 input[type=search]{
 	margin-bottom: 0;
 	height: 0.6rem;
 	color: #333;
 	font-size: 0.26rem;
+	line-height: 0.42rem;
+	padding: 0.2rem 0.3rem;
+}
+.mui-search input[type=search]{
+	padding-left: 0.6rem;
 }
 .mui-search.mui-active:before{
-	top: 0.45rem;
+	line-height: 1;
 	color: #333;
 	border-radius: 3px;
+}
+.mui-search:before{
+	margin-top: -10px;
 }
 .search-top-btn back{
 	text-indent: -2500rem;

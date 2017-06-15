@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div>
 		<header class="mui-bar mui-bar-nav">
 	  	<h1 class="mui-title">{{msg}}</h1>
 	  	<router-link class="mui-icon iconfont icon-sousuo_sousuo mui-pull-right" to="/search"></router-link>
@@ -37,10 +37,6 @@ export default {
 .icon-sousuo_sousuo{
 	color: #483535;
 	font-size: 0.35rem;
-}
-.content{
-	height: calc(100vh - 50px);
-	overflow: auto;
 }
 .mui-table-view:before{
 	background-color: #fff;

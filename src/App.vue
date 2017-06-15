@@ -43,6 +43,15 @@ html{
 }
 body{
 	background: #fff;
+	line-height: 0.42rem;
+}
+.mui-bar .mui-title{
+	right: 0.8rem;
+	left: 0.8rem;
+}
+.mui-title{
+	font-size: 0.34rem;
+	line-height: 0.88rem;
 }
 .mui-tab-item{
 	padding-top: 5px;
@@ -53,20 +62,39 @@ body{
 .router-link-exact-active{
 	color: #ff7043!important;
 }
-
+.mui-bar-tab .mui-tab-item{
+	height: 1rem;
+}
+.mui-bar-tab .mui-tab-item .mui-icon{
+	width: 0.48rem;
+	height: 0.48rem;
+}
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label{
+	font-size: 0.22rem;
+}
 .mui-bar{
 	background-color: #fff;
+	height: 0.88rem;
+	padding-right: 0.2rem;
+	padding-left: 0.2rem;
 }
 #app{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
+	height: 1rem;
 	width: 100%;
-	background: white;
+}
+.mui-bar-nav.mui-bar .mui-icon{
+	margin-right: -0.2rem;
+  margin-left: -0.2rem;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
 }
 .mui-bar .mui-icon{
 	font-size: 0.4rem;
+	padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 .icon {
 	width: .44rem; height: .44rem;

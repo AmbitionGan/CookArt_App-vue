@@ -28,16 +28,16 @@ export default {
 }
 .mui-card-content img{
 	width: 100%;
-	height: 3.5rem;
+	height: 4rem;
 }
 .mui-card-content p img{
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 2rem;
+	height: 2rem;
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-0.75rem,-0.75rem);
+	transform: translate(-0.75rem,-1.2rem);
 }
 .intro{
 	position: absolute;
@@ -55,7 +55,7 @@ export default {
 .mui-card-content{
 	position: relative;
 	width: 100%;
-	height: 3.5rem;
+	height: 4rem;
 }
 .mui-card-content p{
 	font-size: .32rem;
@@ -63,9 +63,9 @@ export default {
 	z-index: 2;
 	position: absolute;
 	text-align: center;
-	line-height: 3.5rem;
+	line-height: 4rem;
 	width: 100%;
-	height: 3.5rem;
+	height: 4rem;
 	background: rgba(0,0,0,.4);
 	margin-bottom: 0;
 }

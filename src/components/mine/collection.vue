@@ -1,14 +1,26 @@
 <template>
 <div>
-	nihaoa 
+	<p v-if="status" class="nothing"></p>
 </div>
 </template>
 
 <script>
 export default {
-	name : 'workshow'
+	name : 'collection',
+	data () {
+		return {
+			status: true
+		}
+	}
 }
 </script>
 
-<style>
+<style scoped>
+.nothing{
+	height: 3rem;
+	width: 80%;
+	margin: 1rem auto 0;
+	background: url(../../../static/images/mine/nothing.png) no-repeat;
+	background-size: 100% 100%;
+}
 </style>

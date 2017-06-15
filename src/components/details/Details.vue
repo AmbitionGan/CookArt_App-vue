@@ -89,6 +89,9 @@ export default {
 }
 .mui-card{
 	margin: 0;
+	font-size: 0.28rem;
+	font-weight: 900;
+	color: #000;
 }
 .foodMaterial{
 	margin-top:.2rem ;

@@ -86,4 +86,10 @@ export default {
 	border: none;
 	background-color: white;
 }
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+	font-size: 0.3rem;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	margin-top: 0.16rem;
+}
 </style>
