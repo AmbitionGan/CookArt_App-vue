@@ -135,7 +135,7 @@ export default {
 input[type=button]{
 	font-size: 0.28rem;
 	color: #ff9a6a;
-	margin-left: 0.2rem;
+	margin-left: 0.1rem;
 }
 input[type=search]{
 	margin-bottom: 0;
@@ -144,6 +144,7 @@ input[type=search]{
 	font-size: 0.26rem;
 	line-height: 0.42rem;
 	padding: 0.2rem 0.3rem;
+	border: 1px solid #ff9a6a;
 }
 .mui-search input[type=search]{
 	padding-left: 0.6rem;
