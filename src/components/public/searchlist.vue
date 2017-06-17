@@ -1,15 +1,14 @@
 <template>
-<div>
+<div >
 	<ul class="mui-table-view">
 	    <li class="mui-table-view-cell mui-media" v-for="item in list">
-	        <!--<router-link :to="{name:'Details',params:{'obj':item}}">-->
-	           <a href="">
+	        <router-link :to="{name:'Details',params:{'id':item.id,'imgUrl':item.albums[0],'msg':item.title}}">
 	            <img class="mui-media-object mui-pull-left" :src="item.albums[0]">
 	            <div class="mui-media-body">
 	                {{item.title}}
 	                <p class="mui-ellipsis">{{item.imtro}}</p>
-	            </div></a>
-	        <!--</router-link>-->
+	            </div>
+	        </router-link>
 	    </li>
 	</ul>
 	<div class="hotsearch">
@@ -41,7 +40,6 @@ export default {
 <style scoped>
 .hotsearch{
 	height: 1.1rem;
-	border-bottom: 1px solid #ccc;
 }
 .hotsearch i{
 	display: inline-block;

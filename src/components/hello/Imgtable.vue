@@ -47,9 +47,12 @@ export default {
 
 <style scoped>
 .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
-	font-size: 0.3rem;
-	height: 0.3rem;
-	line-height: 0.3rem;
-	margin-top: 0.16rem;
+	font-size: 0.3rem !important;
+	height: 0.3rem !important;
+	line-height: 0.3rem !important;
+	margin-top: 0.16rem !important;
+}
+.mui-table-view:after{
+	background-color: none !important;
 }
 </style>

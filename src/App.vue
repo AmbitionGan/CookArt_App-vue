@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <nav class="mui-bar mui-bar-tab">
+  <div id="index">
+    <nav class="mui-bar mui-bar-tab backColor" >
     	<div class="mui-tab-item mui-active">
     		<router-link to="/" >
             <span class="mui-icon iconfont icon-shouye-copy-copy-copy"></span>
@@ -20,7 +20,7 @@
         </router-link>
     	</div>  
       <div class="mui-tab-item">
-    		<router-link to="/mine">
+    		<router-link to="/login" class="login">
             <span class="mui-icon iconfont icon-wode"></span>
             <span class="mui-tab-label">我的</span>
         </router-link>
@@ -32,57 +32,50 @@
 
 <script>
 export default {
-  name: 'app'
+	name: 'index',
 }
 mui('body').on('tap','a',function(){document.location.href=this.href;});
 </script>
 
 <style>
-html{
-	font-size: 15.625vw;
-}
-body{
-	background: #fff;
-	line-height: 0.42rem;
-}
+
 .mui-bar .mui-title{
 	right: 0.8rem;
 	left: 0.8rem;
 }
-.mui-title{
+  .mui-title{
 	font-size: 0.34rem;
 	line-height: 0.88rem;
 }
-.mui-tab-item{
+  .mui-tab-item{
 	padding-top: 5px;
 }
-.mui-tab-item a{
+  .mui-tab-item a{
 	color: #888585;
 }
-.router-link-exact-active{
+  .router-link-exact-active{
 	color: #ff7043!important;
 }
-.mui-bar-tab .mui-tab-item{
+  .mui-bar-tab .mui-tab-item{
 	height: 1rem;
 }
-.mui-bar-tab .mui-tab-item .mui-icon{
+  .mui-bar-tab .mui-tab-item .mui-icon{
 	width: 0.48rem;
 	height: 0.48rem;
 }
-.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label{
+  .mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label{
 	font-size: 0.22rem;
 }
-.mui-bar{
+ .mui-bar{
 	background-color: #fff;
 	height: 0.88rem;
 	padding-right: 0.2rem;
 	padding-left: 0.2rem;
 }
-#app{
+#index{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 1rem;
 	width: 100%;
 }
 .mui-bar-nav.mui-bar .mui-icon{

@@ -8,6 +8,8 @@ import Mine from '@/components/mine/Mine'
 import Workshow from '@/components/mine/workshow'
 import Collection from '@/components/mine/collection'
 import Details from '@/components/details/Details'
+import classifyList from '@/components/choice/classify_list'
+import login from '@/components/login'
 import Register from '@/components/Register'
 
 Vue.use(Router)
@@ -56,8 +58,18 @@ export default new Router({
       component: Details
     },
     {
+      path: '/classify_list/:id/:name',
+      name: 'classifyList',
+      component: classifyList
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
       path: '/register',
-      name: 'Register',
+      name: 'register',
       component: Register
     },
   ]

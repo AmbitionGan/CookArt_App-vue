@@ -35,9 +35,6 @@ export default {
 </script>
 
 <style scoped>
-	.date{
-		margin-top: 44px;
-	}
 	#field{
 		border: 0;
 		border-top: 1px solid #3d0d0d;

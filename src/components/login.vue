@@ -2,43 +2,57 @@
 	<div class="login">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #ff7043;"></a>
-			<h1 class="mui-title" style="color: #ff7043;">注 册</h1>
+			<h1 class="mui-title" style="color: #ff7043;">登 录</h1>
 		</header>
-  		<div class="bgZhe"></div>
 		<div class="bgpic"></div>
 		<form action="" method="post">
 			<div class="user">
 				<i class="iconfont icon-wode"></i>
-			  	<input type="text" class="username" placeholder="请输入用户名"/>
+			  	<input type="text" placeholder="请输入用户名" class="username"/>
 			</div>
 			<div class="pass">
 				<i class="iconfont icon-mima"></i>
-			  	<input type="password" class="password" placeholder="请输入密码"/>
+			  	<input type="password" placeholder="请输入密码" class="password"/>
 			</div>
 			<div class="btn">				
-			  <input type="button" value="注 册" @click="register"/>				  
+			  <input type="button" value="登 录" @click="login"/>				  
 			</div>
-			<p class="loginp">已注册，请<router-link to="/login">登录</router-link></p>
+			<p class="register">没有账号？快速<router-link to="/register">注册</router-link></p>
 		</form>
 		
   </div>
 </template>
 
-
 <script>
 export default {
-	name: "register",
+	name: "login",
+	data () {
+		return {
+			status : ""
+		}
+	},
+	created () {
+		this.status =  this.$route.params.status
+//		if(!status){
+//			document.getElementById("app").style.display = "block"
+//		}else{
+//			document.getElementById("app").style.display = "none";
+//		}
+	},
 	methods : {
-		register () {
+		login () {
 			var _this = this;
 			var username = document.getElementsByClassName("username")[0].value
 			var pwd = document.getElementsByClassName("password")[0].value
-			localStorage.account = username;
-			localStorage.password = pwd;
-			 mui.toast('注册成功,2s后自动跳转到登录页',{ duration:'short', type:'div' });
+			if(username == localStorage.account && pwd == localStorage.password){
+				mui.toast('登陆成功,2s后自动跳转到个人页',{ duration:'short', type:'div' });
 				setTimeout(function(){
-					_this.$router.push({path:'/login'});
+					_this.$router.push({path:'/mine'});
+					localStorage.flag = true
 				},2000)
+			}else{
+				mui.toast('账号或密码错误',{ duration:'short', type:'div' }) 
+			}
 		}
 	}
 }
@@ -134,11 +148,11 @@ export default {
 	-webkit-box-shadow: none;
     box-shadow: none;
 }
-.loginp{
+.login .register{
 	color: #888585;
 	font-size: .28rem;
 }
-.loginp a{
+.register a{
 	text-decoration: underline;
 	color: rgb(255, 112, 67);
 	margin-left: 5px;
@@ -149,7 +163,6 @@ export default {
 	left: 50%;
 	margin-left:-2.7rem;
 	margin-top:-2.5rem;
-
 	
 }
 </style>

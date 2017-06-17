@@ -66,6 +66,6 @@ export default {
 
 <style>
 #slider{
-	top: 44px;
+	margin-top: 0.88rem;
 }
 </style>

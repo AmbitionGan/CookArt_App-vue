@@ -14,16 +14,16 @@ export default {
 </script>
 
 <style scoped>
-.mui-bar.mui-bar-nav.posFixed{
+.choice_header .mui-bar.mui-bar-nav.posFixed{
 	position: fixed;
 }
-.mui-bar{
+.choice_header .mui-bar{
 	background: white;
 }
-.mui-title{
+.choice_header .mui-title{
 	color: #ff7043;
 }
-.icon-sousuo_sousuo{
+.choice_header .icon-sousuo_sousuo{
 	color: #483535;
 }
 

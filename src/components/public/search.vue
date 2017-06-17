@@ -10,47 +10,14 @@
     </form>
     <searchlist></searchlist>
     <ul class="search-hot-list">
-                <li class="item">
+        <li class="item" v-for="item in searchFood" >
+        	<router-link :to="{name:'classifyList',params:{'id':item.id,'name':item.name}}" >
             <a class="link" href="/comic/index/id/518333">
-                狐妖小红娘            </a>
+                	{{item.name}}  
+            </a>
+            </router-link>
         </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/519855">
-                王牌御史            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/511915">
-                中国惊奇先生            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/535102">
-                生死回放（死亡回放）            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/552180">
-                绝地天通·狐            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/531475">
-                妹子与科学            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/535695">
-                赤猫传            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/534925">
-                古校夜游神            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/551196">
-                皇帝的独生女            </a>
-        </li>
-                <li class="item">
-            <a class="link" href="/comic/index/id/530955">
-                戒魔人            </a>
-        </li>
-            </ul>
+    </ul>
 </section>
 
 </template>
@@ -64,7 +31,49 @@ export default {
   name: 'search',
   data () {
   	return {
-  		searchlist : []
+  		searchlist : [],
+  		searchFood:[
+  			{
+  				name:'新鲜水果沙拉',
+  				id:'87',
+  				xlinkHref:'#icon-yingtao'
+  			},
+  			{
+  				name:'广式煲汤',
+  				id:'8',
+  				xlinkHref:'#icon-Soup'
+  			},
+  			{ 
+  				name:'日本料理',
+  				id:'17',
+  				xlinkHref:'#icon-canju'
+  			},
+  			{
+  				name:'杂 粮',
+  				id:'68',
+  				xlinkHref:'#icon-jianbing'
+  			},
+  			{
+  				name:'饮 品',
+  				id:'88',
+  				xlinkHref:'#icon-yinliao'
+  			},
+  			{
+  				name:'荤 菜',
+  				id:'1',
+  				xlinkHref:'#icon-kaoji'
+  			},
+  			{
+  				name:'法式甜点',
+  				id:'86',
+  				xlinkHref:'#icon-zhaquanbing'
+  			},
+  			{
+  				name:'婴儿的辅食',
+  				id:'77',
+  				xlinkHref:'#icon-songbing'
+  			},
+  		]
   	}
   },
   beforeMount () {
@@ -76,25 +85,27 @@ export default {
   methods : {
   	getData(){
 		var keyword = document.getElementsByClassName("searchVal")[0].value;
-		var url = "/cook/query.php?menu="+ keyword +"&key=d6973f3fa9fcdddc05886030da862f26";
+		var url = "http://apis.juhe.cn/cook/query.php?menu="+ keyword +"&key=d6973f3fa9fcdddc05886030da862f26&callback=JSON_CALLBACK";
 //		Vue.axios.get(url).then((res)=>{
 //		   	this.searchlist = res.data.result.data;
 //	       	console.log(this.searchlist)
 //	        bus.$emit("searchres",this.searchlist)
 //		    
 //		})
-// 		jsonp(url,null,(err,data)=> {
-//        if(err){
-//          console.log('数据无法获取')
-//        }else{
-//          console.log(data)
-//        }
-//      })
-		Vue.axios.get("../../../static/hongshaorou.json").then((res)=> {
-	        this.searchlist = res.data.result.data;
-	        //console.log(this.searchlist)
+   		jsonp(url,null,(err,res)=> {
+          if(err){
+            console.log('数据无法获取')
+            
+          }else{
+            this.searchlist = res.result.data;
 	        bus.$emit("searchres",this.searchlist)
-	   })
+          }
+        })
+//		Vue.axios.get(url).then((res)=> {
+//	        this.searchlist = res.data.result.data;
+//	        //console.log(this.searchlist)
+//	        bus.$emit("searchres",this.searchlist)
+//	   })
   	}
  },
  components : {
@@ -106,7 +117,7 @@ export default {
 <style scoped>
 .mui-icon-back{
 	margin: 0 0.2rem 0 0.1rem;
-	color: #fff;
+	color: #ff9a6a;
 }
 .search-form{
     display: flex;
@@ -114,15 +125,16 @@ export default {
     position: relative;
     z-index: 1;
     height: 0.88rem;
-    background-color: #ff9a6a;
+    background-color: #fff;
     font-size: 0.28rem;
+    box-shadow: 0 1px 6px #ccc;
 }
 .mui-input-row{
 	width: 70%;
 }
 input[type=button]{
 	font-size: 0.28rem;
-	color: #fff;
+	color: #ff9a6a;
 	margin-left: 0.2rem;
 }
 input[type=search]{
@@ -181,5 +193,11 @@ input[type=search]{
     border: 1px solid #C5C5C5;
     font-size: 0.28rem;
     color: #535252;
+}
+.mui-input-clear[data-v-444c267a]{
+	border:1px solid #ff9a6a;
+}
+.hotsearch[data-v-0e91caf8]{
+	border: none;
 }
 </style>
