@@ -13,5 +13,6 @@ export default {
 	#Content{
 		overflow: auto;
 		background: white;
+		margin-bottom: 1rem;
 	}
 </style>
